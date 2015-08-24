@@ -13,8 +13,6 @@ library(reshape2)
 library(devtools)
 library(cluster)
 library(BH)
-library(data.table)
-library(DT)
 
 
 #GitHub URL
@@ -60,12 +58,9 @@ ui <- fluidPage(
                   ),
                   style = "font-size:75%")),
            column(9,
-                  div(DT::dataTableOutput("centre_choice"),
+                  div(dataTableOutput("centre_choice"),
                       style = "font-size:75%"))),
   
-  fluidRow(column(6,
-                  downloadButton(outputId='download', 'Download Cluster Centres'),
-                  offset = 4)),
   
   helpText("Descriptions of each of the attributes follows:"),
   helpText("SEAT_EXIT_AVAILABLE: is a passenger's closest exit available"),
